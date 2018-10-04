@@ -6,7 +6,7 @@
 
 * Provide the user with a very plain and simple interface
 * App-like appearance in the browser
-* Users should be able to use it off-lines
+* Users should be able to use it off-line
 * It can be installed to the browser or home page
   (not sure how this works yet - we shall find out)
 

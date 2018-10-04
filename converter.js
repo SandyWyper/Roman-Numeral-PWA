@@ -4,8 +4,6 @@ $(document).ready(function() {
   $('#input-button').on("click", numbersOrLetters);
 });
 
-//-----------------------------------------------------------------
-// Number to Numeral
 
 const romanArr = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V",
   "IV", "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX",
@@ -15,6 +13,11 @@ const numberArr = [1000000, 900000, 500000, 400000, 100000, 90000, 50000, 40000,
   10000, 9000, 5000, 4000, 1000, 900, 500, 400, 100, 90, 50, 40,
   10, 9, 5, 4, 1
 ]
+
+const romanNum = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+
+//-----------------------------------------------------------------
+// Number to Numeral
 
 // determine if input is numbers or letters
 function numbersOrLetters(event) {
@@ -35,23 +38,8 @@ function convertNumber(num) {
   // let numero = getNumber(event);
   let answerArr = switchToNumerals(num);
 
-  showResult(num, answerArr);
+  showResult1(num, answerArr);
 }
-
-//gets a number from the input field
-// function getNumber(event) {
-//
-//   event.preventDefault();
-//
-//   let input = document.getElementById("input-field").value;
-//   if (isNaN(input)) {
-//     alert("you must enter a NUMBER");
-//     document.getElementById("input-field").value = '';
-//   } else {
-//     return input;
-//   }
-// }
-
 
 function switchToNumerals(num) {
   //create variable that will hold the numerals for values over 4000 and vallues
@@ -63,7 +51,7 @@ function switchToNumerals(num) {
   ];
 
   //work through the number and numeral arrays - subtracting the working amount
-  //and adding the numerals to the answer4 array.
+  //and adding the numerals to the answer array.
   for (let x = 0; x < numberArr.length; x++) {
     while (num >= numberArr[x] && num >= 4000) {
       answer[0] += romanArr[x];
@@ -79,7 +67,7 @@ function switchToNumerals(num) {
 
 
 //displays the result on the page only if the input is a number.
-function showResult(number, result) {
+function showResult1(number, result) {
   if (number > 0) {
     $('#results').html($('<p>' + number + ' = <span style="text-decoration: overline">' +
      result[0] + '</span>' + result[1] + '</p>'));
@@ -91,8 +79,8 @@ function showResult(number, result) {
 // //convert it back....
 
 //controller
-function numeralsToNumbers() {
-  let numeralsGiven = getNumerals(event);
+function numeralsToNumbers(input) {
+  let numeralsGiven = checkForNumerals(input);
   if (numeralsGiven) {
     //change numeral string into an array of letters
     let numeralsArray = breakAndCapitalise(numeralsGiven);
@@ -104,16 +92,13 @@ function numeralsToNumbers() {
     if (validOrder) {
       let convertedAmount = changeNumeralsToNumbers(validOrder);
 
-      showResult1(numeralsGiven.toUpperCase(), convertedAmount);
+      showResult2(numeralsGiven.toUpperCase(), convertedAmount);
     }
   }
 }
 
 // gets the numerals from the input field
-function getNumerals(event) {
-  event.preventDefault();
-
-  let input = document.getElementById("input-field").value;
+function checkForNumerals(input) {
 
   //regex test for Roman Numerals
   const numeralRegex = /^[mdclxvi]*$/gi;
@@ -175,17 +160,18 @@ function pairNumerals(arr) {
 
 function checkNumeralOrder(rom) {
   //array of Numerals in decending order of value
-  const romanNum = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
   const nonRepeaters = ["CM", "D", "CD", "XC", "L", "XL", "IX", "V", "IV"]
   const repeaters = ["C", "X", "I"]
   //condition1 is for values like 5 that can't be follwed by a 4. works for 5, 50 and 500
-  const condition1 = (val1, val2, cond1, cond2) => romanNum.indexOf(val1) === cond1 && romanNum.indexOf(val2) === cond2 && val2 !== undefined;
+  const condition1 = (val1, val2, cond1, cond2) => romanNum.indexOf(val1) ===
+                cond1 && romanNum.indexOf(val2) === cond2 && val2 !== undefined;
   //condition2 is for values like 9's and 4's. can't be followed by a 5,4 or 1.
-  const condition2 = (val1, val2, cond1, cond2, cond3) => romanNum.indexOf(val1) === cond1 &&
-    romanNum.indexOf(val2) < cond2 && val2 !== undefined ||
-    romanNum.indexOf(val1) === cond3 && romanNum.indexOf(val2) < cond2 && val2 !== undefined;
+  const condition2 = (val1, val2, cond1, cond2, cond3) => romanNum.indexOf(val1) ===
+                cond1 && romanNum.indexOf(val2) < cond2 && val2 !== undefined ||
+                romanNum.indexOf(val1) === cond3 && romanNum.indexOf(val2) < cond2 && val2 !== undefined;
     // condition 3 stops C,X or I being repeated more than three times in a row.
-  const condition3 = (val1, val2, val3, val4) => repeaters.indexOf(val1) >= 0 && val1 === val2 && val1 === val3 && val1 === val4;
+  const condition3 = (val1, val2, val3, val4) => repeaters.indexOf(val1) >= 0 &&
+                val1 === val2 && val1 === val3 && val1 === val4;
 
   let correctOrderCounter = 0;
 
@@ -258,13 +244,11 @@ function wipeInput() {
 
 //using two arrays side by side convert the numerals to numbers
 function changeNumeralsToNumbers(rom) {
-  const romanNum = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
-  const numberArr = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
   let arrIntoNumbers = [];
 
   for (let x = 0; x < rom.length; x++) {
     let place = romanNum.indexOf(rom[x]);
-    arrIntoNumbers.push(numberArr[place]);
+    arrIntoNumbers.push(numberArrSmall[place]);
   }
 
   //add up the values of the array
@@ -273,7 +257,7 @@ function changeNumeralsToNumbers(rom) {
 }
 
 //display results in the DOM
-function showResult1(rom, num) {
+function showResult2(rom, num) {
   if (num > 0) {
     $('#results').html($('<p>' + rom + ' = ' + num + '</p>'));
   }
