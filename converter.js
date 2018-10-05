@@ -1,7 +1,7 @@
 "use strict";
 //once the page has loaded a listner is created for a button
 $(document).ready(function() {
-  $('#input-button').on("click", numbersOrLetters);
+  $('#input-button').on("click", takeInput);
 });
 
 
@@ -14,35 +14,36 @@ const numberArr = [1000000, 900000, 500000, 400000, 100000, 90000, 50000, 40000,
   10, 9, 5, 4, 1
 ]
 
-const romanNum = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+const romanArrSmall = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+const numberArrSmall = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 
 //-----------------------------------------------------------------
 // Number to Numeral
 
-// determine if input is numbers or letters
-function numbersOrLetters(event) {
+// determine if input is numbers or letters and greater than 0.
+// and then - assign relevent function to deal with input
+function takeInput(event) {
   event.preventDefault();
 
-  let inputCheck = document.getElementById("input-field").value;
-  if(isNaN(inputCheck)) {
-    numeralsToNumbers(inputCheck);
-  } else if(inputCheck <= 0) {
+  let input = document.getElementById("input-field").value;
+  if (isNaN(input)) {
+    numeralsToNumbers(input);
+  } else if (input <= 0) {
     alert("You must enter a number greater then zero.");
-        document.getElementById("input-field").value = '';
-  }{
-    convertNumber(inputCheck);
+    document.getElementById("input-field").value = '';
+  } {
+    convertNumber(input);
   }
 }
 
 function convertNumber(num) {
-  // let numero = getNumber(event);
   let answerArr = switchToNumerals(num);
 
   showResult1(num, answerArr);
 }
 
 function switchToNumerals(num) {
-  //create variable that will hold the numerals for values over 4000 and vallues
+  //create variable that will hold the numerals for values over 4000 and values
   //less than 4000. so that when displaying them, an 'overscore' can show that
   //the value is a multiple of 1000.
   let answer = [
@@ -70,7 +71,7 @@ function switchToNumerals(num) {
 function showResult1(number, result) {
   if (number > 0) {
     $('#results').html($('<p>' + number + ' = <span style="text-decoration: overline">' +
-     result[0] + '</span>' + result[1] + '</p>'));
+      result[0] + '</span>' + result[1] + '</p>'));
   }
 }
 
@@ -80,19 +81,22 @@ function showResult1(number, result) {
 
 //controller
 function numeralsToNumbers(input) {
-  let numeralsGiven = checkForNumerals(input);
-  if (numeralsGiven) {
+
+  let isNumerals = checkForNumerals(input);
+
+  if (isNumerals) {
     //change numeral string into an array of letters
-    let numeralsArray = breakAndCapitalise(numeralsGiven);
+    let splitNumerals = breakAndCapitalise(input);
     //pair any numerals that belong together
-    let pairedNumerals = pairNumerals(numeralsArray);
+    let orderedNumerals = pairNumerals(splitNumerals);
     //check to see that numerals are in a valid order
 
-    let validOrder = checkNumeralOrder(pairedNumerals);
-    if (validOrder) {
-      let convertedAmount = changeNumeralsToNumbers(validOrder);
+    let hasValidOrder = checkNumeralOrder(orderedNumerals);
 
-      showResult2(numeralsGiven.toUpperCase(), convertedAmount);
+    if (hasValidOrder) {
+      let convertedAmount = changeNumeralsToNumbers(orderedNumerals);
+
+      showResult2(input.toUpperCase(), convertedAmount);
     }
   }
 }
@@ -106,7 +110,7 @@ function checkForNumerals(input) {
     alert("Please enter a valid roman numeral.");
     document.getElementById("input-field").value = '';
   } else {
-    return input;
+    return true;
   }
 }
 
@@ -116,9 +120,11 @@ function breakAndCapitalise(rom) {
   return rom.toUpperCase().split('');
 }
 
+
 //pair numerals that belong together
 function pairNumerals(arr) {
   let filteredArray = [];
+
   for (let i = 0; i < arr.length; i++) {
     switch (arr[i]) {
       case "M":
@@ -153,8 +159,10 @@ function pairNumerals(arr) {
         break;
     }
   }
+
   return filteredArray;
 }
+
 
 
 
@@ -163,15 +171,15 @@ function checkNumeralOrder(rom) {
   const nonRepeaters = ["CM", "D", "CD", "XC", "L", "XL", "IX", "V", "IV"]
   const repeaters = ["C", "X", "I"]
   //condition1 is for values like 5 that can't be follwed by a 4. works for 5, 50 and 500
-  const condition1 = (val1, val2, cond1, cond2) => romanNum.indexOf(val1) ===
-                cond1 && romanNum.indexOf(val2) === cond2 && val2 !== undefined;
+  const condition1 = (val1, val2, cond1, cond2) => romanArrSmall.indexOf(val1) ===
+    cond1 && romanArrSmall.indexOf(val2) === cond2 && val2 !== undefined;
   //condition2 is for values like 9's and 4's. can't be followed by a 5,4 or 1.
-  const condition2 = (val1, val2, cond1, cond2, cond3) => romanNum.indexOf(val1) ===
-                cond1 && romanNum.indexOf(val2) < cond2 && val2 !== undefined ||
-                romanNum.indexOf(val1) === cond3 && romanNum.indexOf(val2) < cond2 && val2 !== undefined;
-    // condition 3 stops C,X or I being repeated more than three times in a row.
+  const condition2 = (val1, val2, cond1, cond2, cond3) => romanArrSmall.indexOf(val1) ===
+    cond1 && romanArrSmall.indexOf(val2) < cond2 && val2 !== undefined ||
+    romanArrSmall.indexOf(val1) === cond3 && romanArrSmall.indexOf(val2) < cond2 && val2 !== undefined;
+  // condition 3 stops C,X or I being repeated more than three times in a row.
   const condition3 = (val1, val2, val3, val4) => repeaters.indexOf(val1) >= 0 &&
-                val1 === val2 && val1 === val3 && val1 === val4;
+    val1 === val2 && val1 === val3 && val1 === val4;
 
   let correctOrderCounter = 0;
 
@@ -180,7 +188,7 @@ function checkNumeralOrder(rom) {
   for (let x = 0; x < rom.length; x++) {
     //if the value of the numeral is less than that of the next one in the array
     //then it is an invalid order - show an alert and clear input field
-    if (romanNum.indexOf(rom[x]) > romanNum.indexOf(rom[x + 1]) && rom[x + 1] !== undefined) {
+    if (romanArrSmall.indexOf(rom[x]) > romanArrSmall.indexOf(rom[x + 1]) && rom[x + 1] !== undefined) {
       alert("This is an invalid order of Roman Numerals. wrong order, numerals should be in decending order.");
       wipeInput();
       break;
@@ -223,7 +231,7 @@ function checkNumeralOrder(rom) {
       break;
     }
     //C(100), X(10) and I(1) can be repeated only 3 times.
-    else if (condition3(rom[x], rom[x+1], rom[x+2], rom[x+3])) {
+    else if (condition3(rom[x], rom[x + 1], rom[x + 2], rom[x + 3])) {
       alert("This is an invalid order of Roman Numerals. you cant repeat C,X or I more than three times.");
       wipeInput();
       break;
@@ -232,7 +240,7 @@ function checkNumeralOrder(rom) {
     }
   }
   if (correctOrderCounter === rom.length) {
-    return rom;
+    return true;
   }
 }
 
@@ -247,7 +255,7 @@ function changeNumeralsToNumbers(rom) {
   let arrIntoNumbers = [];
 
   for (let x = 0; x < rom.length; x++) {
-    let place = romanNum.indexOf(rom[x]);
+    let place = romanArrSmall.indexOf(rom[x]);
     arrIntoNumbers.push(numberArrSmall[place]);
   }
 
