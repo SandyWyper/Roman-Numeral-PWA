@@ -1,29 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <script type="text/javascript" src="converter.js"></script>
-  <link rel="stylesheet" href="converter.css">
-
-  <title>Roman numeral PWA</title>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="converter.css">
+    <title>Roman Numeral PWA</title>
 </head>
+
 <body>
+  <div class="wrapper">
+  <header class="title">
+    <h1>Roman Numeral Converter</h1>
+    </header>
+  <table style="width: 550px"  class="center">
+            <tbody>
+            <tr>
+              <th><div align="center">1</div></th>
+              <th><div align="center">5</div></th>
+              <th><div align="center">10</div></th>
+              <th><div align="center">50</div></th>
+              <th><div align="center">100</div></th>
+              <th><div align="center">500</div></th>
+              <th><div align="center">1000</div></th>
+            </tr>
+            <tr>
+              <td><div align="center">I</div></td>
+              <td><div align="center">V</div></td>
+              <td><div align="center">X</div></td>
+              <td><div align="center">L</div></td>
+              <td><div align="center">C</div></td>
+              <td><div align="center">D</div></td>
+              <td><div align="center">M</div></td>
+            </tr>
+          </tbody>
+          </table>
+    <div class="input-section">
+        <form>
+            <input type="text" autofocus placeholder="  ......  "  id="input-field" value="" maxlength="7" required>
+            <button type="submit" id="input-button">ALTERAMENTUM</button>
+        </form>
+    </div>
+    <div id="results" style="height: 70px">
+    </div>
+    <table style="width: 550px" class="center">
+        <tbody>
+        <tr>
+          <th><div align="center">1</div></th>
+          <th><div align="center">2</div></th>
+          <th><div align="center">3</div></th>
+          <th><div align="center">4</div></th>
+          <th><div align="center">5</div></th>
+          <th><div align="center">6</div></th>
+          <th><div align="center">7</div></th>
+          <th><div align="center">8</div></th>
+          <th><div align="center">9</div></th>
+        </tr>
+        <tr>
+          <td><div align="center">I</div></td>
+          <td><div align="center">II</div></td>
+          <td><div align="center">III</div></td>
+          <td><div align="center">IV</div></td>
+          <td><div align="center">V</div></td>
+          <td><div align="center">VI</div></td>
+          <td><div align="center">VII</div></td>
+          <td><div align="center">VIII</div></td>
+          <td><div align="center">IX</div></td>
+        </tr>
+      </tbody>
+      </table>
+        &nbsp;
+      <table style="width: 550px"  class="center">
+        <tbody>
+        <tr>
+          <th><div align="center">10</div></th>
+          <th><div align="center">20</div></th>
+          <th><div align="center">30</div></th>
+          <th><div align="center">40</div></th>
+          <th><div align="center">50</div></th>
+          <th><div align="center">60</div></th>
+          <th><div align="center">70</div></th>
+          <th><div align="center">80</div></th>
+          <th><div align="center">90</div></th>
+        </tr>
+        <tr>
+          <td><div align="center">X</div></td>
+          <td><div align="center">XX</div></td>
+          <td><div align="center">XXX</div></td>
+          <td><div align="center">XL</div></td>
+          <td><div align="center">L</div></td>
+          <td><div align="center">LX</div></td>
+          <td><div align="center">LXX</div></td>
+          <td><div align="center">LXXX</div></td>
+          <td><div align="center">XC</div></td>
+        </tr>
+      </tbody>
+      </table>
+        &nbsp;
+      <table style="width: 550px"  class="center">
+        <tbody>
+        <tr>
+          <th><div align="center">100</div></th>
+          <th><div align="center">200</div></th>
+          <th><div align="center">300</div></th>
+          <th><div align="center">400</div></th>
+          <th><div align="center">500</div></th>
+          <th><div align="center">600</div></th>
+          <th><div align="center">700</div></th>
+          <th><div align="center">800</div></th>
+          <th><div align="center">900</div></th>
+        </tr>
+        <tr>
+          <td><div align="center">C</div></td>
+          <td><div align="center">CC</div></td>
+          <td><div align="center">CCC</div></td>
+          <td><div align="center">CD</div></td>
+          <td><div align="center">D</div></td>
+          <td><div align="center">DC</div></td>
+          <td><div align="center">DCC</div></td>
+          <td><div align="center">DCCC</div></td>
+          <td><div align="center">CM</div></td>
+        </tr>
+      </tbody>
+      </table>
+        &nbsp;
+      <table style="width: 550px" class="center">
+        <tbody>
+        <tr>
+          <th><div align="center">5,000</div></th>
+          <th><div align="center">10,000</div></th>
+          <th><div align="center">50,000</div></th>
+          <th><div align="center">100,000</div></th>
+          <th><div align="center">500,000</div></th>
+          <th><div align="center">1,000,000</div></th>
+        </tr>
+        <tr>
+          <td><div align="center" style="text-decoration: overline">V</div></td>
+          <td><div align="center" style="text-decoration: overline">X</div></td>
+          <td><div align="center" style="text-decoration: overline">L</div></td>
+          <td><div align="center" style="text-decoration: overline">C</div></td>
+          <td><div align="center" style="text-decoration: overline">D</div></td>
+          <td><div align="center" style="text-decoration: overline">M</div></td>
+        </tr>
+      </tbody>
+      </table>
+</div>
 
-  <form>
-    <input type="text" placeholder="  ......  " id="input-field" value="" maxlength="7" required>
-    <button type="submit" id="input-button">ALTERAMENTUM</button>
-  </form>
-
-  <div id="results" style="height: 70px">
-
-      </div>
-
+    <script type="text/javascript" src="converter.js"></script>
 </body>
+
 </html>
