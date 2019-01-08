@@ -1,10 +1,27 @@
+body {
+  font-family: 'IM Fell Great Primer SC', serif;
+  background-color: black;
+  }
+
 .wrapper {
-  max-width: 600px;
+  max-width: 800px;
+  height: 100vh;
   margin: auto;
+  background-color: grey;
 }
 .title {
 	text-align: center;
 }
+
+.input-section{
+	text-align: center;
+	margin: auto;
+}
+
+.results {
+	text-align: center;
+}
+
 table,th, td {
   font-family: 'IM Fell Great Primer SC', serif;
   text-align: center;
@@ -19,4 +36,18 @@ table.center {
 
 th, td {
   width: 40px;
+}
+
+button {
+  text-align: center;
+  font-family: 'IM Fell Great Primer SC', serif;
+  font-size: 18px;
+  color: #505c06;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid #505c06;
+}
+button:focus {
+  outline:none;
 }
