@@ -70,10 +70,17 @@ function switchToNumerals(num) {
 //displays the result on the page only if the input is a number.
 function showResult1(number, result) {
   if (number > 0) {
-    $('#results').html($('<p>' + number + ' = <span style="text-decoration: overline">' +
-      result[0] + '</span>' + result[1] + '</p>'));
+    $('#results').html($(`
+      <p>${number} = <span style="text-decoration: overline">${result[0]}</span>${result[1]}</p>`));
   }
 }
+// //displays the result on the page only if the input is a number.
+// function showResult1(number, result) {
+//   if (number > 0) {
+//     $('#results').html($('<p>' + number + ' = <span style="text-decoration: overline">' +
+//       result[0] + '</span>' + result[1] + '</p>'));
+//   }
+// }
 
 
 //-------------------------------------------------------------------
@@ -107,7 +114,7 @@ function checkForNumerals(input) {
   //regex test for Roman Numerals
   const numeralRegex = /^[mdclxvi]*$/gi;
   if (!numeralRegex.test(input)) {
-    alert("Please enter a valid roman numeral.");
+    alert("Please enter a valid roman numeral or number.");
     document.getElementById("input-field").value = '';
   } else {
     return true;

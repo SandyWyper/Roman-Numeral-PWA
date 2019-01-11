@@ -1,53 +1,71 @@
 body {
-  font-family: 'IM Fell Great Primer SC', serif;
-  background-color: black;
-  }
+    font-family: 'IM Fell Great Primer SC', serif;
+    background-color: black;
+}
 
 .wrapper {
-  max-width: 800px;
-  height: 100vh;
-  margin: auto;
-  background-color: grey;
-}
-.title {
-	text-align: center;
+    max-width: 414px;
+    height: 100vh;
+    margin: auto;
+    background-color: grey;
 }
 
-.input-section{
-	text-align: center;
-	margin: auto;
+.title {
+    text-align: center;
+    background-color: lightgrey;
+    padding: 1.8vw;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+.input-section {
+    text-align: center;
+    margin: auto;
+    padding: 4vw;
 }
 
 .results {
-	text-align: center;
+    text-align: center;
+    font-size: 7vw;
 }
 
-table,th, td {
-  font-family: 'IM Fell Great Primer SC', serif;
-  text-align: center;
-  border: 1px solid #505c06;
-  margin: 5px;
+input {
+	font-family: 'IM Fell Great Primer SC', serif;
+	font-size: 1.2em;
+}
+
+table,
+th,
+td {
+    font-family: 'IM Fell Great Primer SC', serif;
+    text-align: center;
+    border: 1px solid #505c06;
+    margin: 5px;
 }
 
 table.center {
-  margin-left:auto;
-  margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-th, td {
-  width: 40px;
+th,
+td {
+    width: 40px;
 }
 
 button {
-  text-align: center;
-  font-family: 'IM Fell Great Primer SC', serif;
-  font-size: 18px;
-  color: #505c06;
-  background-color: white;
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #505c06;
+    text-align: center;
+    font-family: 'IM Fell Great Primer SC', serif;
+    font-size: 18px;
+    color: #505c06;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid #505c06;
 }
+
 button:focus {
-  outline:none;
+    outline: none;
 }
