@@ -17,3 +17,6 @@ Hosting will either be with gh-pages or Firebase. I am a complete novice at this
 so will possibly have to move the goal posts as we go.
 The simpler this thing is the better! Happy to do this collaboratively, if
 anyone else wants to get involved it like to learn how to work together.
+
+
+* add a limit to the max number handled, instead of limiting the number of characters entered.  This means that long numerals can be handled, but stops a massive number being converted to a daft numeral.

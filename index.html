@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- JQUERY -->
-  <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- -->
+    <!-- Awesome fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
     <!-- googlefonts-->
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Abril+Fatface" rel="stylesheet">
-
     <link rel="stylesheet" href="converter.css">
     <title>Roman Numeral PWA</title>
 </head>
@@ -24,65 +20,71 @@
         <header class="title">
             <h1>Roman Numeral Converter</h1>
         </header>
-        <!-- <table style="width: 550px" class="center">
-            <tbody>
-                <tr>
-                    <th>
-                        <div align="center">1</div>
-                    </th>
-                    <th>
-                        <div align="center">5</div>
-                    </th>
-                    <th>
-                        <div align="center">10</div>
-                    </th>
-                    <th>
-                        <div align="center">50</div>
-                    </th>
-                    <th>
-                        <div align="center">100</div>
-                    </th>
-                    <th>
-                        <div align="center">500</div>
-                    </th>
-                    <th>
-                        <div align="center">1000</div>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <div align="center">I</div>
-                    </td>
-                    <td>
-                        <div align="center">V</div>
-                    </td>
-                    <td>
-                        <div align="center">X</div>
-                    </td>
-                    <td>
-                        <div align="center">L</div>
-                    </td>
-                    <td>
-                        <div align="center">C</div>
-                    </td>
-                    <td>
-                        <div align="center">D</div>
-                    </td>
-                    <td>
-                        <div align="center">M</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-         --><div class="input-section">
+        <div class="input-section">
+            <p>Enter a number or numeral to be converted</p>
             <form>
-                <input type="text" autofocus placeholder="  ......  " id="input-field" value="" maxlength="7" autocomplete="off"required>
-                <button type="submit" id="input-button">ALTERAMENTUM</button>
+                <input type="text" autofocus placeholder="  ......  " id="input-field" value="" maxlength="12" autocomplete="off" required>
+                <button type="submit" id="input-button"><i class="fa fa-random" aria-hidden="true"></i></button>
             </form>
         </div>
-        <div id="results" class="results" style="height: 70px">
+        <div id="results" class="results">
         </div>
-      <!--   <table style="width: 550px" class="center">
+        <section class="info">
+            <div class="info-title">
+                <h2>Roman Numeral Info &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
+            </div>
+            <div id="about-numerals" class="hidden">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div align="center">1</div>
+                            </th>
+                            <th>
+                                <div align="center">5</div>
+                            </th>
+                            <th>
+                                <div align="center">10</div>
+                            </th>
+                            <th>
+                                <div align="center">50</div>
+                            </th>
+                            <th>
+                                <div align="center">100</div>
+                            </th>
+                            <th>
+                                <div align="center">500</div>
+                            </th>
+                            <th>
+                                <div align="center">1000</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div align="center">I</div>
+                            </td>
+                            <td>
+                                <div align="center">V</div>
+                            </td>
+                            <td>
+                                <div align="center">X</div>
+                            </td>
+                            <td>
+                                <div align="center">L</div>
+                            </td>
+                            <td>
+                                <div align="center">C</div>
+                            </td>
+                            <td>
+                                <div align="center">D</div>
+                            </td>
+                            <td>
+                                <div align="center">M</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                   <table>
             <tbody>
                 <tr>
                     <th>
@@ -145,7 +147,7 @@
             </tbody>
         </table>
         &nbsp;
-        <table style="width: 550px" class="center">
+        <table>
             <tbody>
                 <tr>
                     <th>
@@ -208,7 +210,7 @@
             </tbody>
         </table>
         &nbsp;
-        <table style="width: 550px" class="center">
+        <table>
             <tbody>
                 <tr>
                     <th>
@@ -271,7 +273,7 @@
             </tbody>
         </table>
         &nbsp;
-        <table style="width: 550px" class="center">
+        <table>
             <tbody>
                 <tr>
                     <th>
@@ -315,7 +317,11 @@
                 </tr>
             </tbody>
         </table>
-  -->   </div>
+ 
+            </div>
+        </section>
+       
+    </div>
     <script type="text/javascript" src="converter.js"></script>
 </body>
 

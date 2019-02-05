@@ -1,18 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
     font-family: 'IM Fell Great Primer SC', serif;
-    background-color: black;
+    background-color: white;
 }
 
 .wrapper {
     max-width: 414px;
     height: 100vh;
-    margin: auto;
-    background-color: grey;
+    margin: 0 auto;
+    background-color: #E1DDB9FF;
 }
 
 .title {
     text-align: center;
-    background-color: lightgrey;
+    background-color: #C7C5A0FF;
     padding: 1.8vw;
 }
 
@@ -27,13 +33,14 @@ h1 {
 }
 
 .results {
+    height: 70px;
     text-align: center;
     font-size: 7vw;
 }
 
 input {
-	font-family: 'IM Fell Great Primer SC', serif;
-	font-size: 1.2em;
+    font-family: 'IM Fell Great Primer SC', serif;
+    font-size: 1.2em;
 }
 
 table,
@@ -41,11 +48,12 @@ th,
 td {
     font-family: 'IM Fell Great Primer SC', serif;
     text-align: center;
-    border: 1px solid #505c06;
+    border: 1px solid black;
     margin: 5px;
 }
 
-table.center {
+table {
+    width: 23em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -57,15 +65,54 @@ td {
 
 button {
     text-align: center;
-    font-family: 'IM Fell Great Primer SC', serif;
-    font-size: 18px;
-    color: #505c06;
+/*    font-family: 'IM Fell Great Primer SC', serif;
+*/    font-size: 18px;
+    color: darkolivegreen;
     background-color: white;
-    border-radius: 10px;
-    padding: 5px;
-    border: 2px solid #505c06;
+    border-radius: 5px;
+    padding: 1px 10px;
+    border: 2px solid oldlace;
 }
 
+input:focus {
+    outline: none;
+}
 button:focus {
     outline: none;
+}
+
+
+.info {
+    text-align: center;
+    
+}
+
+.info-title {
+    position: relative;
+    background-color: inherit;
+    border: 1px solid seashell;
+    padding-top: 8px;
+}
+
+.hidden {
+    height: 0;
+    display: block;
+    overflow: hidden;
+    transition: all 0.1s ease;
+    /*transition: background-color 0.3s ease-in;*/
+}
+
+.about-numerals {
+    background-color: white;
+    height: 400px;
+    transition: height 0.3s ease-in;
+}
+
+.spin {
+    transform: rotate(180deg);
+}
+
+@keyframes dropdown {
+    0%{top: -300px;}
+    100%{top: 0;}
 }
