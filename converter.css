@@ -28,7 +28,7 @@ header ul {
 }
 
 header ul li {
-    font-size: 4vh;
+    font-size: 2.3rem;
     line-height: 1.1;
     letter-spacing: 10px;
 }
@@ -40,11 +40,8 @@ header ul li {
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    /*justify-content: space-between;*/
 }
 
-
-.main {}
 
 h1 {
     font-size: 1.8em;
@@ -54,7 +51,6 @@ h1 {
     text-align: center;
     margin: 0 auto;
     padding: 4vh;
-    /*height: 50vh;*/
     background-color: cornsilk;
 }
 
@@ -66,15 +62,15 @@ h1 {
 
 input {
     font-family: 'IM Fell Great Primer SC', serif;
-    font-size: 4vh;
+    font-size: 2rem;
 }
 
 
 button {
     text-align: center;
-    font-size: 4vh;
+    font-size: 2rem;
     color: darkolivegreen;
-    background-color: white;
+    background-color: rgba(46,139,87, 0.2);
     border-radius: 1px;
     padding: 0 10px;
     padding-top: 3px;
@@ -93,7 +89,6 @@ button:focus {
 .input-section img {
     height: 30vh;
     width: auto;
-    /*justify-content: flex-end;*/
 }
 
 table,
@@ -122,10 +117,6 @@ td {
 }
 
 .info-title {
-    /*    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;*/
     font-size: 3vh;
     background-color: inherit;
     border: 1px solid inherit;
@@ -172,9 +163,6 @@ footer {
     font-family: courier, sans-serif;
     text-align: center;
     padding: 10px 0;
-    /*position: relative;*/
-    /*bottom: 0;*/
-    /*justify-content: flex-end;*/
     width: 100%;
     background-color: grey;
     color: darkgrey;
@@ -186,11 +174,6 @@ footer a {
 }
 
 @media only screen and (min-width: 770px) {
-    .wrapper {
-        /*min-height: 100vh;*/
-        /*min-width: 100%;*/
-        /*flex-direction: row;*/
-    }
 
     header ul li {
         display: inline-block;
@@ -200,15 +183,11 @@ footer a {
     .main {
         display: flex;
         flex-direction: row;
-        height: 90vh;
-        /*padding-bottom: 28px;*/
-        /*flex-wrap: wrap;*/
-        /*justify-content: space-around;*/
+        height: auto;
     }
 
     .hidden {
         height: auto;
-        /*overflow: scroll;*/
     }
 
     .input-section {
@@ -220,14 +199,13 @@ footer a {
     }
 
 
-.input-section img {
-    height: 50vh;
-    width: 38vh;
-    /*justify-content: flex-end;*/
-}
+    .input-section img {
+        height: 50vh;
+        width: 38vh;
+    }
+
     .results {
         margin-top: 0;
-        /*font-size: 5vh;*/
     }
 
     table {
@@ -237,33 +215,100 @@ footer a {
 
     .info {
         max-width: 50%;
-        /*overflow: scroll;*/
-        /*flex-direction: row;*/
-        /*display: inline-block;*/
-        /*justify-content: right;*/
         margin-bottom: 10px;
+        padding-right: 10px;
     }
 
     .info p {
+        font-family: Geneva, serif;
+        text-align: left;
+        width: 45vw;
         margin: 20px auto;
+        font-size: 1.2rem;
     }
 
     .info-title p {
         display: none;
     }
 
+}
+
+@media only screen and (max-width: 430px) and (min-width:321px) {
+    header {
+        padding: 10px 30px;
+    }
+
+    header img {
+        height: 13vh;
+    }
+
+    header ul {
+        padding-left: 20px;
+    }
+
+    header ul li {
+        font-size: 2rem;
+        letter-spacing: 8px;
+    }
+
+
     input {
-        /*max-width: 40vw;*/
+        font-size: 2rem;
+        margin-top: 10vw;
+        margin-bottom: 1rem;
+        width: 90vw;
     }
 
-    footer {
-        /*position: absolute;*/
-        /*bottom: 0;*/
-        /*display: none;*/
+    button {
+        font-size: 2rem;
+        width: 91vw;
     }
 
-    .footer-space {
-        /*min-height: 138px;*/
-        /*display: block;*/
+
+    .input-section img {
+        height: 30vh;
+        width: auto;
     }
+
+    .main {
+        min-height: 80vh;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+     header {
+        padding: 8px 20px;
+    }
+
+    header img {
+        height: 10vh;
+    }
+header ul {
+    padding-left: 20px;
+}
+    header ul li {
+        font-size: 1.4rem;
+    }
+
+    input {
+        font-size: 1.6rem;
+        margin-top: 10vw;
+        margin-bottom: 1rem;
+        width: 85vw;
+    }
+
+    button {
+        font-size: 1.6rem;
+        width: 86vw;
+    }
+    .results {
+    margin-top: 5vh;
+    font-size: 2rem;
+}
+table,
+th,
+td {
+    font-size: 0.8rem;
+}
+
 }
