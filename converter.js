@@ -11,7 +11,6 @@ window.onload = function() {
 function showInfo() {
     document.querySelector("#about-numerals").classList.toggle("about-numerals");
     document.querySelector(".fa-caret-down").classList.toggle("spin")
-    console.log("listening");
 }
 //-------------------------------------------------------------------------------------------------
 
