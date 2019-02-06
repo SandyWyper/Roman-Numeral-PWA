@@ -9,17 +9,40 @@ body {
     background-color: white;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+    /*background-color: tan;*/
+    background-color: rgba(210, 180, 140, 0.8);
+}
+
+header img {
+    width: auto;
+    height: 15vh;
+}
+
+header ul {
+    padding-left:50px;
+    list-style: none;
+}
+
+header ul li {
+    font-size: 4vh;
+    line-height: 1.1;
+    letter-spacing: 10px;
+
+}
 .wrapper {
-    max-width: 414px;
-    height: 100vh;
-    margin: 0 auto;
-    background-color: #E1DDB9FF;
+    background-color: cornsilk;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
-    text-align: center;
-    background-color: #C7C5A0FF;
-    padding: 1.8vw;
+
 }
 
 h1 {
@@ -28,20 +51,44 @@ h1 {
 
 .input-section {
     text-align: center;
-    margin: auto;
-    padding: 4vw;
+    margin: 0 auto;
+    padding: 4vh;
+    height: 35vh;
+    background-color: cornsilk;
 }
 
 .results {
-    height: 70px;
+    margin-top: 15vh;
     text-align: center;
-    font-size: 7vw;
+    font-size: 5vh;
 }
 
 input {
     font-family: 'IM Fell Great Primer SC', serif;
-    font-size: 1.2em;
+    font-size: 4vh;
 }
+
+
+button {
+    text-align: center;
+/*    font-family: 'IM Fell Great Primer SC', serif;
+*/  font-size: 4vh;
+    color: darkolivegreen;
+    background-color: white;
+    border-radius: 1px;
+    padding: 0 10px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border: 0.5px solid grey;
+}
+
+input:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+
 
 table,
 th,
@@ -53,32 +100,14 @@ td {
 }
 
 table {
-    width: 23em;
-    margin-left: auto;
-    margin-right: auto;
+    width: 80vw;
+    margin: 0 auto;
+    border-collapse: collapse;
 }
 
 th,
 td {
     width: 40px;
-}
-
-button {
-    text-align: center;
-/*    font-family: 'IM Fell Great Primer SC', serif;
-*/    font-size: 18px;
-    color: darkolivegreen;
-    background-color: white;
-    border-radius: 5px;
-    padding: 1px 10px;
-    border: 2px solid oldlace;
-}
-
-input:focus {
-    outline: none;
-}
-button:focus {
-    outline: none;
 }
 
 
@@ -88,31 +117,73 @@ button:focus {
 }
 
 .info-title {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    /*position: relative;*/
+    
+    font-size: 3vh;
     background-color: inherit;
-    border: 1px solid seashell;
+    border: 1px solid inherit;
     padding-top: 8px;
+    padding-bottom: 10px;
+    background-color: cornsilk;
+}
+
+.info-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.info-title img{
+    height: 30vh;
+    /*display: inline-block;*/
 }
 
 .hidden {
     height: 0;
     display: block;
     overflow: hidden;
-    transition: all 0.1s ease;
+    /*transition: all 0.2s ease;*/
     /*transition: background-color 0.3s ease-in;*/
 }
 
+.click-info {
+    cursor: pointer;
+}
+
 .about-numerals {
+    padding: 20px;
     background-color: white;
-    height: 400px;
-    transition: height 0.3s ease-in;
+    height: 100%;
+    margin-bottom: 40px;
+    /*transition: height 0.3s ease-in;*/
+}
+
+.about-numerals p {
+    padding: 20px;
+    font-family: Geneva, serif;
+    line-height: 1.2;
 }
 
 .spin {
     transform: rotate(180deg);
 }
 
-@keyframes dropdown {
-    0%{top: -300px;}
-    100%{top: 0;}
+footer {
+    font-family: courier, sans-serif;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    /*height: 40px;*/
+    width: 100%;
+    background-color: grey;
+    color: darkgrey;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
 }

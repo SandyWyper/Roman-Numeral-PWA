@@ -2,7 +2,7 @@
 //once the page has loaded a listner is created for a button
 window.onload = function() {
     document.querySelector('#input-button').addEventListener("click", takeInput);
-    document.querySelector('.info-title').addEventListener("click", showInfo);
+    document.querySelector('.click-info').addEventListener("click", showInfo);
 };
 
 // ------------------------------------------------------------------------------------
