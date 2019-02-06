@@ -1,19 +1,19 @@
 "use strict";
 //once the page has loaded a listner is created for a button
 window.onload = function() {
-  document.querySelector('#input-button').addEventListener("click", takeInput);
-  document.querySelector('.info-title').addEventListener("click", showInfo);
+    document.querySelector('#input-button').addEventListener("click", takeInput);
+    document.querySelector('.info-title').addEventListener("click", showInfo);
 };
 
 // ------------------------------------------------------------------------------------
 // Display Numeral info
 
-function showInfo(){
-  document.querySelector("#about-numerals").classList.toggle("about-numerals");
-document.querySelector(".fa-caret-down").classList.toggle("spin")
-  console.log("listening");
+function showInfo() {
+    document.querySelector("#about-numerals").classList.toggle("about-numerals");
+    document.querySelector(".fa-caret-down").classList.toggle("spin")
+    console.log("listening");
 }
- //-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 const romanArr = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V",
     "IV", "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX",
