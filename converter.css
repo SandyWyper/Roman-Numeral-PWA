@@ -55,9 +55,9 @@ h1 {
 }
 
 .results {
-    margin-top: 15vh;
+    min-height: 18vh;
     text-align: center;
-    font-size: 5vh;
+    font-size: 2rem;
 }
 
 input {
@@ -70,9 +70,9 @@ button {
     text-align: center;
     font-size: 2rem;
     color: darkolivegreen;
-    background-color: rgba(46,139,87, 0.2);
+    background-color: rgba(46, 139, 87, 0.2);
     border-radius: 1px;
-    padding: 0 10px;
+    /*padding: 0 10px;*/
     padding-top: 3px;
     padding-bottom: 2px;
     border: 0.5px solid grey;
@@ -117,7 +117,7 @@ td {
 }
 
 .info-title {
-    font-size: 3vh;
+    font-size: 1.5rem;
     background-color: inherit;
     border: 1px solid inherit;
     padding-top: 8px;
@@ -177,7 +177,7 @@ footer a {
 
     header ul li {
         display: inline-block;
-        font-size: 4vw;
+        font-size: 3rem;
     }
 
     .main {
@@ -243,25 +243,25 @@ footer a {
     }
 
     header ul {
-        padding-left: 20px;
+        padding-left: 16px;
     }
 
     header ul li {
         font-size: 2rem;
-        letter-spacing: 8px;
+        letter-spacing: 6px;
     }
 
 
     input {
         font-size: 2rem;
-        margin-top: 10vw;
+        margin-top: 2rem;
         margin-bottom: 1rem;
-        width: 90vw;
+        width: 80vw;
     }
 
     button {
         font-size: 2rem;
-        width: 91vw;
+        width: 81vw;
     }
 
 
@@ -276,16 +276,18 @@ footer a {
 }
 
 @media only screen and (max-width: 320px) {
-     header {
+    header {
         padding: 8px 20px;
     }
 
     header img {
         height: 10vh;
     }
-header ul {
-    padding-left: 20px;
-}
+
+    header ul {
+        padding-left: 20px;
+    }
+
     header ul li {
         font-size: 1.4rem;
     }
@@ -301,14 +303,16 @@ header ul {
         font-size: 1.6rem;
         width: 86vw;
     }
+
     .results {
-    margin-top: 5vh;
-    font-size: 2rem;
-}
-table,
-th,
-td {
-    font-size: 0.8rem;
-}
+        margin-top: 5vh;
+        font-size: 2rem;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.8rem;
+    }
 
 }
