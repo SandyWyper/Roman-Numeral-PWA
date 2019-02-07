@@ -204,6 +204,10 @@ footer a {
         width: 38vh;
     }
 
+    button{
+        width: 4vw;
+    }
+
     .results {
         margin-top: 0;
     }
