@@ -2,6 +2,7 @@
  "name": "Roman Numeral Converter",
  "short_name": "Roman PWA",
  "lang": "en-US",
+ "scope": "/app/",
  "start_url": "/",
  "background_color": "#D2B48C",
  "theme_color": "#D2B48C",
