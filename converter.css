@@ -65,6 +65,7 @@ h1 {
 input {
     font-family: 'IM Fell Great Primer SC', serif;
     font-size: 2rem;
+    text-transform: uppercase;
 }
 
 
