@@ -260,10 +260,13 @@ function wipeInput() {
 function changeNumeralsToNumbers(rom) {
     let arrIntoNumbers = [];
 
-    for (let x = 0; x < rom.length; x++) {
-        let place = romanArrSmall.indexOf(rom[x]);
+
+    rom.forEach(function(el) {
+        let place = romanArrSmall.indexOf(el);
         arrIntoNumbers.push(numberArrSmall[place]);
-    }
+
+    });
+
 
     //add up the values of the array
     const reducer = (acc, cur) => acc + cur;
