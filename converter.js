@@ -62,16 +62,16 @@ function switchToNumerals(num) {
 
     //work through the number and numeral arrays - subtracting the working amount
     //and adding the numerals to the answer array.
-    for (let x = 0; x < numberArr.length; x++) {
-        while (num >= numberArr[x] && num >= 4000) {
-            answer[0] += romanArr[x];
-            num -= numberArr[x];
+    numberArr.forEach(function(amount, i) {
+        while (num >= amount && num >= 4000) {
+            answer[0] += romanArr[i];
+            num -= numberArr[i];
         }
-        while (num >= numberArr[x] && num < 4000) {
-            answer[1] += romanArr[x];
-            num -= numberArr[x];
+        while (num >= amount && num < 4000) {
+            answer[1] += romanArr[i];
+            num -= amount;
         }
-    }
+    });
     return answer;
 }
 
