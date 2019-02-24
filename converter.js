@@ -164,11 +164,10 @@ function pairNumerals(arr) {
                 break;
         }
     }
-
     return filteredArray;
 }
 
-
+//** perhaps refactor the function below to handle 'throw' errors and 'catch' functions.....????
 
 
 function checkNumeralOrder(rom) {
@@ -260,13 +259,10 @@ function wipeInput() {
 function changeNumeralsToNumbers(rom) {
     let arrIntoNumbers = [];
 
-
     rom.forEach(function(el) {
         let place = romanArrSmall.indexOf(el);
         arrIntoNumbers.push(numberArrSmall[place]);
-
     });
-
 
     //add up the values of the array
     const reducer = (acc, cur) => acc + cur;
