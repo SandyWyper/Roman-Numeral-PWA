@@ -1,23 +1,49 @@
 //This is the "Offline copy of pages" service worker
 
 //Install stage sets up the index page (home page) in the cache and opens a new cache
-self.addEventListener('install', function(event) {
-  var indexPage = new Request('index.html');
-  event.waitUntil(
-    fetch(indexPage).then(function(response) {
-      return caches.open('pwabuilder-offline').then(function(cache) {
-        console.log('[PWA Builder] Cached index page during Install '+ response.url);
-        return cache.put(indexPage, response);
-      });
-  }));
+// self.addEventListener('install', function(event) {
+//   var indexPage = new Request('index.html');
+//   event.waitUntil(
+//     fetch(indexPage).then(function(response) {
+//       return caches.open('pwabuilder-offline').then(function(cache) {
+//         console.log('[PWA Builder] Cached index page during Install '+ response.url);
+//         return cache.put(indexPage, response);
+//       });
+//   }));
+// });
+
+
+
+self.addEventListener('install', function(e) {
+ e.waitUntil(
+   caches.open('RomanNum').then(function(cache) {
+     return cache.addAll([
+       '/',
+       '/index.html',
+       '/converter.css',
+       '/converter.js',
+       '/fonts/im-fell-great-primer-sc-v8-latin-regular.eot',
+       '/fonts/im-fell-great-primer-sc-v8-latin-regular.svg',
+       '/fonts/im-fell-great-primer-sc-v8-latin-regular.ttf',
+       '/fonts/im-fell-great-primer-sc-v8-latin-regular.woff',
+       '/fonts/im-fell-great-primer-sc-v8-latin-regular.woff2',
+       '/images/caret-down-solid.svg',
+       '/images/random-solid.svg',
+       '/images/statue.png',
+       '/images/coin.png'
+     ]);
+   })
+ );
 });
+
+
 
 //If any fetch fails, it will look for the request in the cache and serve it from there first
 self.addEventListener('fetch', function(event) {
   var updateCache = function(request){
     return caches.open('pwabuilder-offline').then(function (cache) {
       return fetch(request).then(function (response) {
-        console.log('[PWA Builder] add page to offline '+response.url)
+        console.log('[PWA Builder] add page to offline '+ response.url + response)
         return cache.put(request, response);
       });
     });
