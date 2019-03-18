@@ -1,3 +1,18 @@
+/* im-fell-great-primer-sc-regular - latin */
+@font-face {
+  font-family: 'IM Fell Great Primer SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/im-fell-great-primer-sc-v8-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('IM FELL Great Primer SC'), local('IM_FELL_Great_Primer_SC'),
+       url('fonts/im-fell-great-primer-sc-v8-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/im-fell-great-primer-sc-v8-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/im-fell-great-primer-sc-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/im-fell-great-primer-sc-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/im-fell-great-primer-sc-v8-latin-regular.svg#IMFellGreatPrimerSC') format('svg'); /* Legacy iOS */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -54,6 +69,13 @@ h1 {
     background-color: cornsilk;
     margin-top: 2rem;
 }
+.input-section button {
+    width: 3rem;
+}
+.input-section form button img {
+    height:1.5rem;
+    width: auto;
+}
 
 .results {
     min-height: 5rem;
@@ -88,10 +110,10 @@ button:focus {
     outline: none;
 }
 
-.input-section img {
+/*.input-section img {
     height: 380px;
     width: auto;
-}
+}*/
 
 table,
 th,
@@ -120,17 +142,22 @@ td {
 }
 
 .info-title {
+    display: inline-flex;
     font-size: 1.5rem;
     background-color: inherit;
     border: 1px solid inherit;
     padding-top: 8px;
-    padding-bottom: 10px;
     background-color: cornsilk;
 }
 
 .info-title a {
     color: inherit;
     text-decoration: none;
+}
+
+.info-title img {
+    height: 25px;
+    width: auto;
 }
 
 
@@ -201,13 +228,12 @@ footer a {
         align-items: center;
     }
 
-
     .input-section img {
         height: 400px;
         width: auto;
     }
 
-    button{
+    button {
         width: 4vw;
     }
 
@@ -234,8 +260,12 @@ footer a {
         font-size: 1.2rem;
     }
 
-    .info-title p {
+    .info-title  {
         display: none;
+    }
+    #about-numerals {
+        margin-top: 40px;
+        background-color: cornsilk;
     }
 
 }
@@ -266,7 +296,9 @@ footer a {
         width: 80vw;
     }
 
-    button {
+
+
+.input-section button {
         font-size: 2rem;
         width: 81vw;
     }
@@ -306,10 +338,15 @@ footer a {
         width: 85vw;
     }
 
-    button {
+    .input-section button {
         font-size: 1.6rem;
         width: 86vw;
     }
+    .input-section img {
+        max-width: 300px;
+        height: auto;
+    }
+
 
     .results {
         margin-top: 50px;
