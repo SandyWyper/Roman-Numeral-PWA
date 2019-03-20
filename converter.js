@@ -1,4 +1,5 @@
 "use strict";
+let deferredPrompt;
 
 // listen for install prompt
 window.addEventListener('beforeinstallprompt', (e) => {
