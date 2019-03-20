@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
     
-    <link rel="manifest" href="images/icons/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="msapplication-TileColor" content="#D2B48C">
     <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#D2B48C">
@@ -353,7 +353,7 @@
 
 
     if (navigator.serviceWorker.controller) {
-        console.log('Active service worker found, no need to register', navigator.serviceWorker)
+        console.log('Active service worker found, no need to register')
     } else {
         //Register the ServiceWorker
         navigator.serviceWorker.register('sw.js')
