@@ -20,8 +20,8 @@ To achieve PWA functionality you have to fulfil a number of criteria:
 
 other optimisation criteria:
 
-	* various sizes of icon
-	* address bar theme colour
-	* configuration for a splash screen 
+* various sizes of icon
+* address bar theme colour
+* configuration for a splash screen 
 
 In addition to this, there is a listener for the "Install to homescreen" prompt. When launched as an app it preforms just as you would expect a native app to function.
