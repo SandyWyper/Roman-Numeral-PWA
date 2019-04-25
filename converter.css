@@ -175,9 +175,9 @@ td {
 .about-numerals {
     padding: 20px;
     background-color: white;
-    height: 600px;
+    height: 100%;
     margin-bottom: 40px;
-    transition: height 0.3s ease-in;
+    /*transition: height 0.3s ease-in;*/
 }
 
 .about-numerals p {

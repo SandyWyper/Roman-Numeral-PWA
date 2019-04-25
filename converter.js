@@ -58,7 +58,7 @@ window.onload = function() {
 function showInfo() {
     document.querySelector("#about-numerals").classList.toggle("about-numerals");
     document.querySelector(".down-arrow").classList.toggle("spin");
-    // document.querySelector("#about-numerals").scrollIntoView({behavior: 'smooth'});
+    document.querySelector("#about-numerals").scrollIntoView({behavior: 'smooth'});
 }
 //-------------------------------------------------------------------------------------------------
 
