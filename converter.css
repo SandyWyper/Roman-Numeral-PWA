@@ -165,7 +165,7 @@ td {
     height: 0;
     display: block;
     overflow: hidden;
-    transition: height 0.3s ease-in;
+    transition: height 0.2s ease-out;
 }
 
 .click-info {

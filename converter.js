@@ -39,31 +39,11 @@ function addToHomeScreen() {
         });
 }
 
-// // take the users install prompt outcome
-// btnAdd.addEventListener('click', (e) => {
-//     // hide our user interface that shows our A2HS button
-//     btnAdd.style.display = 'none';
-//     // Show the prompt
-//     deferredPrompt.prompt();
-//     // Wait for the user to respond to the prompt
-//     deferredPrompt.userChoice
-//         .then((choiceResult) => {
-//             if (choiceResult.outcome === 'accepted') {
-//                 console.log('User accepted the A2HS prompt');
-//             } else {
-//                 console.log('User dismissed the A2HS prompt');
-//             }
-//             deferredPrompt = null;
-//         });
-// });
 
 // listen to see if app was installed correctly
 window.addEventListener('appinstalled', (evt) => {
     app.logEvent('a2hs', 'installed');
 });
-
-
-
 
 
 //once the page has loaded a listner is created for a button
@@ -77,7 +57,8 @@ window.onload = function() {
 
 function showInfo() {
     document.querySelector("#about-numerals").classList.toggle("about-numerals");
-    document.querySelector(".down-arrow").classList.toggle("spin")
+    document.querySelector(".down-arrow").classList.toggle("spin");
+    // document.querySelector("#about-numerals").scrollIntoView({behavior: 'smooth'});
 }
 //-------------------------------------------------------------------------------------------------
 
