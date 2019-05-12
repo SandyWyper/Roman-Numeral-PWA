@@ -145,7 +145,7 @@
 
 
 
-const cacheName = 'v2';
+const cacheName = 'v3';
 
 
 
