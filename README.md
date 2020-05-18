@@ -3,7 +3,7 @@
 
 This web app takes an input of either numbers or Roman numerals, and coverts that input to the other type.  There is error handling and will inform the user of an incorrect input value, and will let them know what was wrong with the input.  For example; wrong numeral ordering, incorrect characters, combo of numbers and letters, etc.
 
-All convertion functionality was written from scratch in javascript.
+All conversion functionality was written from scratch in javascript.
 
 ---
 ### This is a *Progressive Web App*
